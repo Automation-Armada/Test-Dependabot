@@ -1,6 +1,6 @@
 version: 2
 updates:
-  - package-ecosystem: "npm"  # Usa npm si es un proyecto de Node.js, cambia si usas otro gestor (por ejemplo, "python" o "maven")
+  - package-ecosystem: "npm"  
     directory: "/"  # El directorio donde se encuentran los archivos de dependencias
     schedule:
       interval: "weekly"  # Frecuencia para buscar actualizaciones (puede ser "daily", "weekly", "monthly")
