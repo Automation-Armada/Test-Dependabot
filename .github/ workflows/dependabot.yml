@@ -1,7 +1,12 @@
 name: Manual Dependabot Trigger
 
 on:
-  workflow_dispatch: # Permite ejecutar el flujo manualmente
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "Branch to trigger Dependabot updates"
+        required: true
+        default: "main" # Cambia a la rama predeterminada de tu repositorio si es diferente
 
 jobs:
   trigger-dependabot:
@@ -10,10 +15,11 @@ jobs:
     steps:
       - name: Trigger Dependabot Updates
         run: |
-          echo "Creating Dependabot update request"
+          echo "Creating Dependabot update request for branch: ${{ inputs.branch }}"
           curl -X POST \
           -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
           -H "Accept: application/vnd.github.v3+json" \
+          -d '{"branch":"${{ inputs.branch }}"}' \
           https://api.github.com/repos/${{ github.repository }}/dependabot/updates
 
 # version: 2
