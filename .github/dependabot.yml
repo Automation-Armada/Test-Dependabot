@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: "npm" # Ecosistema del gestor de paquetes (puede ser maven, pip, etc.)
-    directory: "/" # Ubicación del archivo package.json
+    directory: "/" 
     schedule:
       interval: "daily" # Frecuencia: daily, weekly o monthly
     commit-message:
