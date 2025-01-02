@@ -1,6 +1,6 @@
 version: 2
 updates:
-  - package-ecosystem: "npm" # Ecosistema del gestor de paquetes (puede ser maven, pip, etc.)
+  - package-ecosystem: "npm" 
     directory: "/" 
     schedule:
       interval: "daily" # Frecuencia: daily, weekly o monthly
