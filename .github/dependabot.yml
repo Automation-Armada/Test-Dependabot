@@ -11,10 +11,10 @@ jobs:
     strategy:
       matrix:
         directory:
-          - "/dependencies/lodash"
-          - "/dependencies/axios"
-          - "/dependencies/minimist"
-          - "/dependencies/dotenv"
+          - "/lodash"
+          - "/axios"
+          - "/minimist"
+          - "/dotenv"
     steps:
       - name: Checkout del código
         uses: actions/checkout@v4
