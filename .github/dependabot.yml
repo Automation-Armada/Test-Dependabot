@@ -1,41 +1,68 @@
-version: 2
-updates:
-  - package-ecosystem: "npm" #added from here
-    directory: "/lodash"
-    schedule:
-      interval: "daily"  
-    commit-message:
-      prefix: "fix"  
-    allow:
-      - dependency-type: "direct"  
-    open-pull-requests-limit: 1
+name: Dependabot Updates
 
-  - package-ecosystem: "npm"
-    directory: "/axios"
-    schedule:
-      interval: "daily"  
-    commit-message:
-      prefix: "fix"  
-    allow:
-      - dependency-type: "direct"  
-    open-pull-requests-limit: 1
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Corre diariamente a medianoche
+  workflow_dispatch:  # Permite ejecutarlo manualmente desde GitHub Actions
 
-  - package-ecosystem: "npm"
-    directory: "/minimist"
-    schedule:
-      interval: "daily"  
-    commit-message:
-      prefix: "fix"  
-    allow:
-      - dependency-type: "direct"  
-    open-pull-requests-limit: 1
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        directory:
+          - "/dependencies/lodash"
+          - "/dependencies/axios"
+          - "/dependencies/minimist"
+          - "/dependencies/dotenv"
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
 
-  - package-ecosystem: "npm"
-    directory: "/dotenv"
-    schedule:
-      interval: "daily"  
-    commit-message:
-      prefix: "fix"  
-    allow:
-      - dependency-type: "direct"  
-    open-pull-requests-limit: 1
+      - name: Ejecutar Dependabot en ${{ matrix.directory }}
+        run: |
+          echo "🔍 Ejecutando Dependabot en ${matrix.directory}"
+          # Este paso ejecuta Dependabot en el directorio especificado
+          dependabot fetch-metadata --directory="${matrix.directory}" --package-ecosystem="npm"
+
+# version: 2
+# updates:
+#   - package-ecosystem: "npm" #added from here
+#     directory: "/lodash"
+#     schedule:
+#       interval: "daily"  
+#     commit-message:
+#       prefix: "fix"  
+#     allow:
+#       - dependency-type: "direct"  
+#     open-pull-requests-limit: 1
+
+#   - package-ecosystem: "npm"
+#     directory: "/axios"
+#     schedule:
+#       interval: "daily"  
+#     commit-message:
+#       prefix: "fix"  
+#     allow:
+#       - dependency-type: "direct"  
+#     open-pull-requests-limit: 1
+
+#   - package-ecosystem: "npm"
+#     directory: "/minimist"
+#     schedule:
+#       interval: "daily"  
+#     commit-message:
+#       prefix: "fix"  
+#     allow:
+#       - dependency-type: "direct"  
+#     open-pull-requests-limit: 1
+
+#   - package-ecosystem: "npm"
+#     directory: "/dotenv"
+#     schedule:
+#       interval: "daily"  
+#     commit-message:
+#       prefix: "fix"  
+#     allow:
+#       - dependency-type: "direct"  
+#     open-pull-requests-limit: 1
