@@ -4,38 +4,22 @@ updates:
     directory: "/lodash"
     schedule:
       interval: "daily"  
-    commit-message:
-      prefix: "fix"  
-    allow:
-      - dependency-type: "direct"  
     open-pull-requests-limit: 1
 
   - package-ecosystem: "npm"
     directory: "/axios"
     schedule:
-      interval: "daily"  
-    commit-message:
-      prefix: "fix"  
-    allow:
-      - dependency-type: "direct"  
+      interval: "daily"    
     open-pull-requests-limit: 1
 
   - package-ecosystem: "npm"
     directory: "/minimist"
     schedule:
-      interval: "daily"  
-    commit-message:
-      prefix: "fix"  
-    allow:
-      - dependency-type: "direct"  
+      interval: "daily"    
     open-pull-requests-limit: 1
 
   - package-ecosystem: "npm"
     directory: "/dotenv"
     schedule:
       interval: "daily"  
-    commit-message:
-      prefix: "fix"  
-    allow:
-      - dependency-type: "direct"  
     open-pull-requests-limit: 1
