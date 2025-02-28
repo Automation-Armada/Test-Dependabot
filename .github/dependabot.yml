@@ -1,10 +1,41 @@
 version: 2
 updates:
-  - package-ecosystem: "npm" 
-    directory: "/" 
+  - package-ecosystem: "npm"
+    directory: "/lodash"
     schedule:
-      interval: "daily" # Frecuencia: daily, weekly o monthly
+      interval: "daily"  
     commit-message:
-      prefix: "fix" # Prefijo para los commits de Dependabot
+      prefix: "fix"  
     allow:
-      - dependency-type: "direct" # Tipos de dependencias a actualizar
+      - dependency-type: "direct"  
+    open-pull-requests-limit: 1
+
+  - package-ecosystem: "npm"
+    directory: "/axios"
+    schedule:
+      interval: "daily"  
+    commit-message:
+      prefix: "fix"  
+    allow:
+      - dependency-type: "direct"  
+    open-pull-requests-limit: 1
+
+  - package-ecosystem: "npm"
+    directory: "/minimist"
+    schedule:
+      interval: "daily"  
+    commit-message:
+      prefix: "fix"  
+    allow:
+      - dependency-type: "direct"  
+    open-pull-requests-limit: 1
+
+  - package-ecosystem: "npm"
+    directory: "/dotenv"
+    schedule:
+      interval: "daily"  
+    commit-message:
+      prefix: "fix"  
+    allow:
+      - dependency-type: "direct"  
+    open-pull-requests-limit: 1
