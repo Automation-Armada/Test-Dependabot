@@ -1,25 +1,29 @@
 version: 2
 updates:
   - package-ecosystem: "npm" #added from here
-    directory: "/lodash"
+    directories: 
+      - "/lodash"
+      - "/axios"
+      - "/minimist"
+      - "/dotenv"
     schedule:
       interval: "daily"  
     open-pull-requests-limit: 1
 
-  - package-ecosystem: "npm"
-    directory: "/axios"
-    schedule:
-      interval: "daily"    
-    open-pull-requests-limit: 1
+  # - package-ecosystem: "npm"
+  #   directory: "/axios"
+  #   schedule:
+  #     interval: "daily"    
+  #   open-pull-requests-limit: 1
 
-  - package-ecosystem: "npm"
-    directory: "/minimist"
-    schedule:
-      interval: "daily"    
-    open-pull-requests-limit: 1
+  # - package-ecosystem: "npm"
+  #   directory: "/minimist"
+  #   schedule:
+  #     interval: "daily"    
+  #   open-pull-requests-limit: 1
 
-  - package-ecosystem: "npm"
-    directory: "/dotenv"
-    schedule:
-      interval: "daily"  
-    open-pull-requests-limit: 1
+  # - package-ecosystem: "npm"
+  #   directory: "/dotenv"
+  #   schedule:
+  #     interval: "daily"  
+  #   open-pull-requests-limit: 1
