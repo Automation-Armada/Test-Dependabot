@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: "npm" 
-    directory: "/lodash"
+    directory: "*/lodash"
     schedule:
       interval: "daily"  
     open-pull-requests-limit: 1
